@@ -38,19 +38,12 @@ h5 {
     text-align: center;
     font-weight: lighter;
     font-size:x-large;
-    text-decoration: underline;
 }
 
 h6{
     text-align: center;
     font-weight: lighter;
     font-size:x-large;
-}
-
-.flex-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
 }
 
 .bunpic {
@@ -60,21 +53,7 @@ h6{
     border: 3px solid black;
 }
 
-.sitedesc {
-    margin-top: 90px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 .item {
     margin-left: auto;
     margin-right: auto;
-}
-
-#products {
-    background-color: yellow;
-}
-
-.item:hover {
-    background-color: yellow;
 }
