@@ -12,11 +12,13 @@ body {
     border-bottom: 5px solid black;
 }
 
+/* same url decorator */
 a {
     text-decoration: none;
     color: black;
 }
 
+/* diff fonts and text options to match  */
 h1 {
     text-align: left;
     font-weight: lighter;
@@ -52,6 +54,7 @@ h6{
     font-size:x-large;
 }
 
+/* bun pic initialization */
 .bunpic {
     display: block;
     margin-left: auto;
@@ -64,6 +67,7 @@ h6{
     margin-right: auto;
 }
 
+/* tag for highlighted page */
 #products {
     background-color: yellow;
 }
@@ -75,6 +79,7 @@ h6{
     padding-bottom: 10px;
 }
 
+/* row flex to fit dropdown box */
 .dropdown {
     margin-left: auto;
     margin-right: auto;
@@ -92,6 +97,7 @@ h6{
     flex-grow: 1;
 }
 
+/* making a little arrow -> is there a more efficient way ? */
 .arrow {
     width: 0px;
     height: 0px;

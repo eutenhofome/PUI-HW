@@ -6,12 +6,14 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+/* spacing and border line */
 .topbar {
     margin-top: 55px;
     padding-bottom: 30px;
     border-bottom: 5px solid black;
 }
 
+/* get rid of url decoration */
 a {
     text-decoration: none;
     color: black;
@@ -49,12 +51,14 @@ h6{
     margin: 10px;
 }
 
+/* column flex container */
 .flex-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
+/* bun pic class w/ border */
 .bunpic {
     display: block;
     margin-left: auto;
@@ -68,6 +72,7 @@ h6{
     margin-right: auto;
 }
 
+/* item centered w/ margin */
 .item {
     margin-left: auto;
     margin-right: auto;
