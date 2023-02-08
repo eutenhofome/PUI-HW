@@ -5,74 +5,76 @@
   <title>PRODUCTS</title>
 
   <body>
-    <!-- Topbar div to isolate logo -->
     <div class="topbar">
-      <a href="./index.html"> <img id='logo' src="logo/logo-01.svg" width=400px > </a>
+      <!-- Logo Div, img id puts margin -->
+      <div class="logo">
+        <a href="./index.html"> <img src="logo/logo-01.svg" width=280px > </a>
+      </div>
+      
+      <!-- Topright div to hold pages and slogan in two column divs -->
+      <div class="topright">
+        <div class="pages">
+          <h2><a href="./index.html"><span id="selected">PRODUCTS</span></a></h2>
+          <h3><a href="./cart.html"><span>CART</span></a></h3>
+        </div>
+        <div>
+          <h4>Our hand-made cinnamon rolls</h4>
+        </div>
+      </div>
     </div>
 
-    <h2><a href="./index.html"><span id="products">PRODUCTS</span></a></h2>
-
-    <h3><a href="./cart.html">CART</a></h3>
-
-    <div class="sitedesc"><h4>Our hand-made cinnamon rolls</h4></div>
     
-    <!-- flex container holding varied items in "item" div -->
+
+    <!-- 2 flex-container divs (direction:row) holding 3 items in "item" div -->
     <div class="flex-container">
 
       <div class="item">
-        <a href="./productspecs.html"><img class="bunpic" src="./products/original-cinnamon-roll.jpg" width="250px">
+        <a href="./productspecs.html"><img class="bunpic" src="./products/original-cinnamon-roll.jpg" width="200px">
         <h5>Original cinnamon roll</h5>
         <h6>$2.49</h6>
         </a>
       </div>
 
-      <!-- wasn't quite sure how to add space so made a class -->
-      <div class="space"></div>
-
       <div class="item">
-        <a href="./productspecs.html"><img class="bunpic" src="./products/apple-cinnamon-roll.jpg" width="250px">
+        <a href="./productspecs.html"><img class="bunpic" src="./products/apple-cinnamon-roll.jpg" width="200px">
         <h5>Apple cinnamon roll</h5>
         <h6>$3.49</h6>
         </a>
       </div>
 
-      <div class="space"></div>
-
       <div class="item">
-        <a href="./productspecs.html"><img class="bunpic" src="./products/raisin-cinnamon-roll.jpg" width="250px">
+        <a href="./productspecs.html"><img class="bunpic" src="./products/raisin-cinnamon-roll.jpg" width="200px">
         <h5>Raisin cinnamon roll</h5>
         <h6>$2.99</h6>
         </a>
       </div>
+    
+    </div>
 
-      <div class="space"></div>
-
+    <div class="flex-container">
       <div class="item">
-        <a href="./productspecs.html"><img class="bunpic" src="./products/walnut-cinnamon-roll.jpg" width="250px">
+        <a href="./productspecs.html"><img class="bunpic" src="./products/walnut-cinnamon-roll.jpg" width="200px">
         <h5>Walnut cinnamon roll</h5>
         <h6>$3.49</h6>
         </a>
       </div>
 
-      <div class="space"></div>
 
       <div class="item">
-        <a href="./productspecs.html"><img class="bunpic" src="./products/double-chocolate-cinnamon-roll.jpg" width="250px">
+        <a href="./productspecs.html"><img class="bunpic" src="./products/double-chocolate-cinnamon-roll.jpg" width="200px">
         <h5>Double-chocolate cinnamon roll</h5>
         <h6>$3.99</h6>
         </a>
       </div>
 
-      <div class="space"></div>
-
       <div class="item">
-        <a href="./productspecs.html"><img class="bunpic" src="./products/strawberry-cinnamon-roll.jpg" width="250px">
+        <a href="./productspecs.html"><img class="bunpic" src="./products/strawberry-cinnamon-roll.jpg" width="200px">
         <h5>Strawberry cinnamon roll</h5>
         <h6>$3.99</h6>
         </a>
       </div>
-
     </div>
+
 
   </body>
 </html>
