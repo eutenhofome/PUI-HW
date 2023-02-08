@@ -1,5 +1,6 @@
-#logo {
+.logo {
     margin-left: 25px;
+    margin-top: 25px;
 }
 
 body {
@@ -7,9 +8,40 @@ body {
 }
 
 .topbar {
-    margin-top: 55px;
-    padding-bottom: 30px;
-    border-bottom: 5px solid black;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    padding-bottom: 25px;
+}
+
+.topright {
+    display:flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.pages {
+    display: flex;
+    justify-content: flex-end;
+    gap:50px;
+    border-bottom: 4px solid black;
+    padding-right: 35px;
+    height: 100px;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 30px;
+    margin-right: 35px;
+    margin-left: 35px;
+}
+
+.right {
+    flex-direction: column;
+    margin-left:70px;
+    margin-right:0px;
 }
 
 /* same url decorator */
@@ -22,30 +54,34 @@ a {
 h1 {
     text-align: left;
     font-weight: lighter;
-    font-size: x-large;
+    font-size: large;
 }
 
 h2 {
     text-align: center;
+    margin-bottom: auto;
+    margin-top: auto;
+    font-size: larger;
 }
 
 h3 {
     text-align: center;
     font-weight: lighter;
-    font-size: x-large;
+    font-size: larger;
+    margin-bottom: auto;
+    margin-top: auto;
 }
 
 h4 {
-    text-align: center;
     font-weight: lighter;
-    font-size: xx-large;
-    
+    font-size: x-large;
+    padding-top: 25px;
 }
 
 h5 {
     text-align: left;
     font-weight: lighter;
-    font-size:x-large;
+    font-size: large;
 }
 
 h6{
@@ -57,8 +93,9 @@ h6{
 /* bun pic initialization */
 .bunpic {
     display: block;
-    margin-left: auto;
+    margin-left: 30px;
     margin-right: auto;
+    flex-grow: 0;
     border: 3px solid black;
 }
 
@@ -68,7 +105,7 @@ h6{
 }
 
 /* tag for highlighted page */
-#products {
+#selected {
     background-color: yellow;
 }
 
@@ -81,38 +118,36 @@ h6{
 
 /* row flex to fit dropdown box */
 .dropdown {
-    margin-left: auto;
-    margin-right: auto;
     display: flex;
     flex-direction:row;
-    width: 250px;
-    height: 55px;
+    width: 200px;
+    height: 45px;
     border: 3px solid black;
-    padding-right: 20px;
-    padding-left: 20px;
+    padding-right: 15px;
+    padding-left: 0px;
     margin-bottom: 50px;
 }
 
 .option {
     flex-grow: 1;
+    margin-left: 20px;
 }
 
 /* making a little arrow -> is there a more efficient way ? */
 .arrow {
     width: 0px;
     height: 0px;
-    border-left: 15px solid transparent;
-    border-right: 15px solid transparent;
-    border-top: 15px solid black;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-top: 12px solid black;
     margin-top: auto;
     margin-bottom: auto;
 }
 
 .subject {
-    margin-top: 0px;
-    margin-bottom: 10px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 0px;
     width: 300px;
     text-align: left;
     font-weight: lighter;

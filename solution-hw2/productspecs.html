@@ -7,35 +7,63 @@
   <!-- much of the repated structure / general flow of index -->
   <body>
     <div class="topbar">
-        <a href="./index.html"> <img id='logo' src="logo/logo-01.svg" width=400px > </a>
-    </div>
-
-    <h2><a href="./index.html"><span id="products">PRODUCTS</span></a></h2>
-
-    <h3><a href="./cart.html">CART</a></h3>
-
-    <div class="sitedesc"><h4>Original cinnamon roll</h4></div>
-
-    <div class="item">
-        <img class="bunpic" src="./products/original-cinnamon-roll.jpg" width="600px">
-    </div>
-
-    <!-- much of these div classes are specific to the items to match the mockups, they might be a bit excessive but it was the way my brain thought to resolve the little differences -->
-    <div class="description">
-        <h5>Customize our delicious hand-made cinnamon roll to your liking!</h5>
-    </div>
-
-    <div class="subject">
-        Glazing:
-    </div>
-
-    <!-- col flex for dropdown options -->
-    <div class="dropdown">
-        <div class="option">
-            <h1>Keep original</h1>
+        <!-- Logo Div, img id puts margin -->
+        <div class="logo">
+          <a href="./index.html"> <img src="logo/logo-01.svg" width=280px > </a>
         </div>
-        <div class="arrow"></div>
-    </div>
+        
+        <!-- Topright div to hold pages and slogan in two column divs -->
+        <div class="topright">
+          <div class="pages">
+            <h2><a href="./index.html"><span id="selected">PRODUCTS</span></a></h2>
+            <h3><a href="./cart.html"><span>CART</span></a></h3>
+          </div>
+          <div>
+            <h4>Original cinnamon roll</h4>
+          </div>
+        </div>
+      </div>
+
+    <!-- row div to hold pic, and info -->
+    <div class="flex-container">
+        <img class="bunpic" src="./products/original-cinnamon-roll.jpg" width="450px">
+        <div class="right">
+            <div>
+                <h5>Customize our delicious hand-made cinnamon roll to your liking!</h5>
+            </div>
+            <div>
+                <div class="subject">
+                    <h5>Glazing:</h5>
+                </div>
+            
+                <div class="dropdown">
+                    <div class="option">
+                        <h1>Keep original</h1>
+                    </div>
+                    <div class="arrow"></div>
+                </div>
+            </div>
+
+            <div>
+                <div class="subject">
+                    <h5>Pack size:</h5>
+                </div>
+            
+                <div class="dropdown">
+                    <div class="option">
+                        <h1>1</h1>
+                    </div>
+                    <div class="arrow"></div>
+                </div>
+            </div>
+            
+        </div>
+    </div>"
+
+
+
+    
+    <!--
 
     <div class="subject">
         Pack size:
@@ -57,7 +85,7 @@
                 Add to Cart
             </div>
         </div>
-    </div>
+    </div> -->
 
 
 
