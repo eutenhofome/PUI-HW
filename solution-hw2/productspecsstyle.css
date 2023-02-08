@@ -53,6 +53,7 @@ body {
     display: flex;
     flex-direction: row;
     margin-right: 30px;
+    justify-content:left;
 }
 
 /* div for Add to Cart button */
@@ -61,12 +62,17 @@ body {
     height: 40px;
     display: flex;
     flex-direction: column;
-    margin-left: auto;
-    margin-right: 0px;
+    margin-left: 41px;
+    margin-right: auto;
     margin-top: 10px;
     margin-bottom: 50px;
     border: 5px solid black;
     background-color: yellow;
+    flex-grow: 0;
+}
+
+.price {
+    margin-left: 30px;
 }
 
 /* same url decorator */
@@ -107,6 +113,7 @@ h5 {
     text-align: left;
     font-weight: lighter;
     font-size: large;
+    line-height: 20px;
 }
 
 h6{
@@ -163,9 +170,13 @@ h6{
 .subject {
     margin-left: 0px;
     margin-right: auto;
-    margin-bottom: 0px;
     width: 300px;
     text-align: left;
     font-weight: lighter;
     font-size: x-large;
+    line-height: 0px;
+}
+
+#price {
+    font-weight: bolder;
 }
