@@ -1,0 +1,153 @@
+#logo {
+    margin-left: 25px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.topbar {
+    margin-top: 55px;
+    padding-bottom: 30px;
+    border-bottom: 5px solid black;
+}
+
+/* same url decorator */
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/* diff fonts and text options to match  */
+h1 {
+    text-align: left;
+    font-weight: lighter;
+    font-size: x-large;
+}
+
+h2 {
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+    font-weight: lighter;
+    font-size: x-large;
+}
+
+h4 {
+    text-align: center;
+    font-weight: lighter;
+    font-size: xx-large;
+    
+}
+
+h5 {
+    text-align: left;
+    font-weight: lighter;
+    font-size:x-large;
+}
+
+h6{
+    text-align: center;
+    font-weight: lighter;
+    font-size:x-large;
+}
+
+/* bun pic initialization */
+.bunpic {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 3px solid black;
+}
+
+.item {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* tag for highlighted page */
+#products {
+    background-color: yellow;
+}
+
+.description {
+    width:300px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 10px;
+}
+
+/* row flex to fit dropdown box */
+.dropdown {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction:row;
+    width: 250px;
+    height: 55px;
+    border: 3px solid black;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-bottom: 50px;
+}
+
+.option {
+    flex-grow: 1;
+}
+
+/* making a little arrow -> is there a more efficient way ? */
+.arrow {
+    width: 0px;
+    height: 0px;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid black;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.subject {
+    margin-top: 0px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    text-align: left;
+    font-weight: lighter;
+    font-size: x-large;
+}
+
+.checkout {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction:row;
+    width: 290px;
+    height: 55px;
+    margin-bottom: 50px;
+}
+
+.price {
+    flex-grow: 1;
+    text-align: center;
+    font-weight: bold;
+    font-size: x-large;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.addtocart {
+    margin-right: 0px;
+    width:150px;
+    border: 3px solid black;
+    background-color: yellow;
+
+}
+
+.addbutton {
+    text-align: center;
+    font-weight: lighter;
+    font-size: x-large;
+    margin-top: 11px;
+}
