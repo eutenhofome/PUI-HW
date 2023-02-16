@@ -32,19 +32,22 @@
         <div class="right">
             <h5 id="description">Customize our delicious hand-made cinnamon roll to your liking!</h5>
 
-            <div class="dropdown">
-                <label for="glazing"><h5>Glazing:</h5></label>
-                <select name="glazing" id="glazing" onChange="glazingChange(element)"></select>
+            <!-- dropdown -->
+            <div>
+                <label><h5>Glazing:</h5></label> 
+                <!-- select dropdown with glazingChange -->
+                <select id="glazing" onChange="glazingChange(this)"></select>
             </div>
             <br>
-            <div class="dropdown">
-                <label for="packing"><h5>Pack size:</h5></label>
-                <select name="packing" id="packing" onChange="packingChange(element)"></select>
+            <div>
+                <label><h5>Pack size:</h5></label>
+                <!-- packing dropdown with packingchange -->
+                <select id="packing" onChange="packingChange(this)"></select>
             </div>
             <br>
             <br>
             <div class="finalcheckout">
-                <div class="price">
+                <div class="priceList">
                     <h6 id="price">$2.49</h6>
                 </div>
                 <div class="checkout">

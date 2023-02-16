@@ -1,3 +1,8 @@
+//  initializing addedPrice and finalPrice, using addedPrice to interact with a glazing change when computing a multiplication price
+let addedPrice = 0;
+let finalPrice = 0;
+
+// array with each glaze option, and glaze price for iteration
 const glazeOptions = [
     {
         glaze: "Original",
@@ -45,6 +50,7 @@ const packOptions = [
 let chooseGlaze = document.querySelector('#glazing');
 let choosePack = document.querySelector('#packing');
 
+// looping for glaze & pack size to add the options
 for (let i=0; i<4; i++) {
     let option = document.createElement('option');
     option.text = glazeOptions[i].glaze;
@@ -59,12 +65,26 @@ for (let i=0; i<4; i++) {
     choosePack.add(option);
 }
 
+// changes the glaze price by init the added value, then limiting to 2 decimals
 function glazingChange(element) {
-    const glazePriceChange = (element.value);
-    updatedPrice = (2.49 + glazePriceChange);
-    price = "$" + updatedPrice.toFixed(2);
+    const glazeChange = Number(element.value);
+    console.log(element.value);
+    addedPrice = Number(2.49 + glazeChange).toFixed(2);
+    console.log(addedPrice);
+    finalPrice = "$" + (addedPrice);
+    updatePrice(finalPrice);
 }
 
-function packChange(element) {
-    const packPriceChange = (element.value);
+// multiplies the added price by the pack size value w/ 2 decimals
+function packingChange(element) {
+   const packChange = Number(element.value);
+   multPrice = Number(addedPrice * packChange).toFixed(2);
+   finalPrice = "$" + (multPrice);
+   updatePrice(finalPrice);
+}
+
+// stores new price in final price value w/ the "price" id
+function updatePrice(price) {
+    let thePrice = document.getElementById('price')
+    thePrice.innerHTML = finalPrice;
 }

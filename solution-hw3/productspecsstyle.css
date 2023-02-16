@@ -72,7 +72,7 @@ body {
     flex-shrink: 0;
 }
 
-.price {
+.priceList {
     margin-left: 30px;
 }
 
@@ -151,17 +151,6 @@ select {
     font-size:large;
     padding-left: 10px;
 }
-
-.dropdown {
-    position: relative;
-}
-
-.dropdown-content {
-    display: block;
-    position: absolute;
-}
-
-.dropdown-content:hover .dropdown-content {display:block};
 
 .option {
     flex-grow: 1;
