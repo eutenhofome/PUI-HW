@@ -36,15 +36,16 @@ body {
     flex-direction: row;
     justify-content: center;
     margin-bottom: 30px;
-    margin-right: 35px;
+    margin-right: 100px;
     margin-left: 35px;
 }
 
 /* div for rightside of info next to pic */
 .right {
     flex-direction: column;
-    margin-left:70px;
+    margin-left:60px;
     margin-right:0px;
+    width: 100px;
     flex-grow: 1;
 }
 
@@ -64,11 +65,11 @@ body {
     flex-direction: column;
     margin-left: 41px;
     margin-right: auto;
-    margin-top: 10px;
+    margin-top: 15px;
     margin-bottom: 50px;
-    border: 5px solid black;
+    border: 3px solid black;
     background-color: yellow;
-    flex-grow: 0;
+    flex-shrink: 0;
 }
 
 .price {
@@ -114,6 +115,8 @@ h5 {
     font-weight: lighter;
     font-size: large;
     line-height: 20px;
+    margin-top: 15px;
+    margin-left: 10px;
 }
 
 h6{
@@ -126,9 +129,9 @@ h6{
 /* bun pic initialization */
 .bunpic {
     display: block;
-    margin-left: 30px;
-    margin-right: auto;
-    flex-grow: 0;
+    margin-left: auto;
+    margin-right:auto;
+    flex-shrink: 0;
     height:100%;
     border: 3px solid black;
 }
@@ -139,16 +142,26 @@ h6{
 }
 
 /* row flex to fit dropdown box */
-.dropdown {
-    display: flex;
-    flex-direction:row;
-    width: 250px;
-    height: 45px;
+
+select {
+    width: 270px;
+    height: 50px;
     border: 3px solid black;
-    padding-right: 15px;
-    padding-left: 0px;
-    margin-bottom: 50px;
+    margin-left: 10px;
+    font-size:large;
+    padding-left: 10px;
 }
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: block;
+    position: absolute;
+}
+
+.dropdown-content:hover .dropdown-content {display:block};
 
 .option {
     flex-grow: 1;

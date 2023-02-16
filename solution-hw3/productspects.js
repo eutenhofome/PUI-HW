@@ -1,18 +1,18 @@
-glazingOptions = [
+const glazeOptions = [
     {
         glaze: "Original",
         glazePrice: 0
-    }
+    },
 
     {
         glaze: "Sugar Milk",
         glazePrice: 0
-    }
+    },
 
     {
         glaze: "Vanilla Milk",
         glazePrice: 0.50
-    }
+    },
 
     {
         glaze: "Double Chocolate",
@@ -20,23 +20,21 @@ glazingOptions = [
     }
 ]
 
-const glazing = [original, sugar, vanilla, chocolate]
-
-packOptions = [
+const packOptions = [
     {
         pack: "1",
         packDiff: 1
-    }
+    },
 
     {
         pack: "3",
         packDiff: 3
-    }
+    },
 
     {
         pack: "6",
         packDiff: 5
-    }
+    },
 
     {
         pack: "12",
@@ -44,28 +42,29 @@ packOptions = [
     }
 ]
 
-const packs = [packof1, packof3, packof6, packof12]
+let chooseGlaze = document.querySelector('#glazing');
+let choosePack = document.querySelector('#packing');
 
-var glaze = document.getElementById("glazing");
-for (i=0; i<4; i++) {
-    let curr = document.createElement("glazeChoice");
-    glazeChoice.text = glazingOptions.glaze;
-    glazeChoice.value = glazingOptions.glazePrice;
-    glazing.add(curr);
+for (let i=0; i<4; i++) {
+    let option = document.createElement('option');
+    option.text = glazeOptions[i].glaze;
+    option.value = glazeOptions[i].glazePrice;
+    chooseGlaze.add(option);
 }
 
-var pack = document.getElementById("packing");
-for (i=0; i<4; i++) {
-    let curr = document.createElement("packChoice");
-    packChoice.text = packingOptions.pack;
-    packChoice.value = glazingOptions.packDiff;
-    packing.add(curr);
+for (let i=0; i<4; i++) {
+    let option = document.createElement('option');
+    option.text = packOptions[i].pack;
+    option.value = packOptions[i].packDiff;
+    choosePack.add(option);
 }
 
 function glazingChange(element) {
-    const priceChange(element.value);
+    const glazePriceChange = (element.value);
+    updatedPrice = (2.49 + glazePriceChange);
+    price = "$" + updatedPrice.toFixed(2);
 }
 
 function packChange(element) {
-    const priceChange(element.value);
+    const packPriceChange = (element.value);
 }

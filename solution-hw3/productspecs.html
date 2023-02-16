@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <link rel = "stylesheet" href = "productspecsstyle.css">
-  <meta charset="UTF-8">
+<meta charset="UTF-8">
+<script src="/solution-hw3/productspects.js" defer></script>
+
   <title>Products</title>
   
   <!-- much of the repated structure / general flow of index -->
@@ -28,19 +30,38 @@
     <div class="flex-container">
         <img class="bunpic" src="./products/original-cinnamon-roll.jpg" width="450px">
         <div class="right">
-            <h5>Customize our delicious hand-made cinnamon roll to your liking!</h5>
+            <h5 id="description">Customize our delicious hand-made cinnamon roll to your liking!</h5>
 
             <div class="dropdown">
-                <label>Glazing:</label>
-                <select id="glazing" onChange="glazingChange(glaze)"> </select>
+                <label for="glazing"><h5>Glazing:</h5></label>
+                <select name="glazing" id="glazing" onChange="glazingChange(element)"></select>
             </div>
-
+            <br>
             <div class="dropdown">
-                <label>Pack size:</label>
-                <select id="packing" onChange="packingChange(pack)"> </select>
+                <label for="packing"><h5>Pack size:</h5></label>
+                <select name="packing" id="packing" onChange="packingChange(element)"></select>
+            </div>
+            <br>
+            <br>
+            <div class="finalcheckout">
+                <div class="price">
+                    <h6 id="price">$2.49</h6>
+                </div>
+                <div class="checkout">
+                    <h3>Add to Cart</h3>
+                </div>
+
             </div>
 
-            <!-- <div>
+        </div>
+    </div>
+
+  </body>
+</html>
+
+
+
+<!-- <div>
                 <div class="subject">
                     <h5>Glazing:</h5>
                 </div>
@@ -65,19 +86,3 @@
                     <div class="arrow"></div>
                 </div>
             </div> -->
-            
-            <div class="finalcheckout">
-                <div class="price">
-                    <h6 id="price">$2.49</h6>
-                </div>
-                <div class="checkout">
-                    <h3>Add to Cart</h3>
-                </div>
-
-            </div>
-
-        </div>
-    </div>
-
-  </body>
-</html>
