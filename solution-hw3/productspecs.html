@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel = "stylesheet" href = "productspecsstyle.css">
+  <meta charset="UTF-8">
+  <title>Products</title>
+  
+  <!-- much of the repated structure / general flow of index -->
+  <body>
+    <div class="topbar">
+        <!-- Logo Div, img id puts margin -->
+        <div class="logo">
+          <a href="./index.html"> <img src="logo/logo-01.svg" width=280px > </a>
+        </div>
+        
+        <!-- Topright div to hold pages and slogan in two column divs -->
+        <div class="topright">
+          <div class="pages">
+            <h2><a href="./index.html"><span id="selected">PRODUCTS</span></a></h2>
+            <h3><a href="./cart.html"><span>CART</span></a></h3>
+          </div>
+          <div>
+            <h4>Original cinnamon roll</h4>
+          </div>
+        </div>
+      </div>
+
+    <!-- row div to hold pic, and info -->
+    <div class="flex-container">
+        <img class="bunpic" src="./products/original-cinnamon-roll.jpg" width="450px">
+        <div class="right">
+            <h5>Customize our delicious hand-made cinnamon roll to your liking!</h5>
+
+            <div class="dropdown">
+                <label>Glazing:</label>
+                <select id="glazing" onChange="glazingChange(glaze)"> </select>
+            </div>
+
+            <div class="dropdown">
+                <label>Pack size:</label>
+                <select id="packing" onChange="packingChange(pack)"> </select>
+            </div>
+
+            <!-- <div>
+                <div class="subject">
+                    <h5>Glazing:</h5>
+                </div>
+            
+                <div class="dropdown">
+                    <div class="option">
+                        <h1>Keep original</h1>
+                    </div>
+                    <div class="arrow"></div>
+                </div>
+            </div>
+
+            <div>
+                <div class="subject">
+                    <h5>Pack size:</h5>
+                </div>
+            
+                <div class="dropdown">
+                    <div class="option">
+                        <h1>1</h1>
+                    </div>
+                    <div class="arrow"></div>
+                </div>
+            </div> -->
+            
+            <div class="finalcheckout">
+                <div class="price">
+                    <h6 id="price">$2.49</h6>
+                </div>
+                <div class="checkout">
+                    <h3>Add to Cart</h3>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+  </body>
+</html>
