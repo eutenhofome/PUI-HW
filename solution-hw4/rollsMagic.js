@@ -1,3 +1,4 @@
+// import rolls and make constructor class
 import {rolls} from "./rollsData.js"
 
 class Roll {
@@ -12,6 +13,7 @@ class Roll {
 
 const cart = []
 
+// +source price and image
 const queryString = window.location.search;
 const params = new URLSearchParams(queryString);
 const rollType = params.get('roll');
@@ -26,8 +28,10 @@ headerElement.innerText = rollType + " Cinnamon Roll"
 const bunImage = document.querySelector('.bunpic');
 bunImage.src = "./products/" + rollImage
 
+// updates cart array by calling updatecart when checkout button clicked
 document.querySelector("#checkout").addEventListener("click", updateCart);
 
+// roll instance from item/index/choice which is then pushed into cart aray
 function updateCart() {
     let glazeIndex = chooseGlaze.selectedIndex;
     let glazeChoice = glazeOptions[glazeIndex];
@@ -37,8 +41,6 @@ function updateCart() {
 
     let chosenRoll = new Roll(rollType, glazeChoice.glaze, packChoice.pack, rollPrice);
     cart.push(chosenRoll);
-    console.log(cart);
-
 
 }
 
