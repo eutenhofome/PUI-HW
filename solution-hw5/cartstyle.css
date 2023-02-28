@@ -131,7 +131,10 @@ h1 {
 #price {
     justify-content: flex-end;
     margin-left: auto;
-    margin-right: 15px;
+    margin-right: 40px;
+    margin-top: 15px;
+    margin-bottom: auto;
+    font-size: larger;
 }
 
 .bottomborder {

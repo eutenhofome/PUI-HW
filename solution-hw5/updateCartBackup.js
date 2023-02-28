@@ -34,12 +34,10 @@ function alterTemplate(roll) {
     const removeButton = roll.element.querySelector("#remove");
     if (removeButton) {
         removeButton.addEventListener('click',removeRoll(roll));
-        updateVisuals();
     }
-
     // prepend to the wholeCart, to visually add
     const wholeCart = document.querySelector(".wholeCart");
-    wholeCart.append(roll.element);
+    wholeCart.prepend(roll.element);
     updateVisuals(roll);
 }
 
@@ -50,23 +48,9 @@ function removeRoll(roll) {
     cart.set.delete(roll);
 }
 
-function updatePrice() {
-    let totalPrice = document.getElementById("price");
-    let totalPriceValue = 0;
-    console.log("updatePrice called!");
-
-    for (const roll of cart) {
-        console.log("for loop called");
-        totalPriceValue += Number(roll.finalPrice);
-        let totalPriceHTML = "$" + Number(totalPriceValue.toFixed(2));
-        console.log(totalPriceHTML);
-        totalPrice.innerHTML = totalPriceHTML;
-    }
-}
-
 //update visuals after each roll is added, so proper info is shown
 function updateVisuals(roll) {
-
+    
     const bunPic = roll.element.querySelector(".bunpic");
     bunPic.src = "./products/" + rolls[roll.type].imageFile;
 
@@ -80,9 +64,7 @@ function updateVisuals(roll) {
     bunSize.innerHTML = "Pack Size: " + roll.size; 
 
     const bunPrice = roll.element.querySelector(".price");
-    bunPrice.innerHTML = "$" + roll.finalPrice;
-
-    updatePrice();
+    bunPrice.innerHTML = roll.finalPrice;
 }
 
 // add the rolls provided on canvas
@@ -94,4 +76,3 @@ addToTemplate("Apple", "Original", "3", 3.49);
 // alter template to reflect the canvas rolls
 for (const bun of cart) {
     alterTemplate(bun);
-}
