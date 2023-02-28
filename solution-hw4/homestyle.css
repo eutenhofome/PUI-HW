@@ -1,0 +1,113 @@
+.logo {
+    margin-left: 25px;
+    margin-top: 25px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* spacing and border line */
+.topbar {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    padding-bottom: 50px;
+}
+
+.topright {
+    display:flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.pages {
+    display: flex;
+    justify-content: flex-end;
+    gap:50px;
+    border-bottom: 4px solid black;
+    padding-right: 35px;
+    height: 100px;
+}
+
+/* get rid of url decoration */
+a {
+    text-decoration: none;
+    color: black;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: auto;
+    margin-top: auto;
+    font-size: larger;
+}
+
+h3 {
+    text-align: center;
+    font-weight: lighter;
+    font-size: larger;
+    margin-bottom: auto;
+    margin-top: auto;
+}
+
+h4 {
+    font-weight: lighter;
+    font-size: x-large;
+    padding-top: 25px;
+    
+}
+
+h5 {
+    text-align: left;
+    font-weight: lighter;
+    font-size: larger;
+    text-decoration: underline;
+    margin: 10px;
+}
+
+h6{
+    text-align: left;
+    font-weight: lighter;
+    font-size: larger;
+    margin: 10px;
+}
+
+/* row flex container for 3 item rows*/
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 30px;
+    margin-right: 35px;
+    margin-left: 35px;
+}
+
+/* bun pic class w/ border */
+.bunpic {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 3px solid black;
+}
+
+/* item centered w/ margin */
+.item {
+    margin-left: auto;
+    margin-right: auto;
+    height: 300px;
+    width: 220px;
+}
+
+
+#selected {
+    background-color: yellow;
+}
+
+.item:hover {
+    background-color: yellow;
+}
+
+h5:hover {
+    font-weight:bolder;
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel = "stylesheet" href = "productspecsstyle.css">
+<meta charset="UTF-8">
+<script src="./productspects.js" defer></script>
+<script type="module" src="./rollsData.js" defer></script>
+<script type="module" src="./rollsMagic.js" defer></script>
+
+  <head><title>Products</title></head>
+  
+  <!-- much of the repated structure / general flow of index -->
+  <body>
+    <div class="topbar">
+        <!-- Logo Div, img id puts margin -->
+        <div class="logo">
+          <a href="./index.html"> <img src="logo/logo-01.svg" width=280px > </a>
+        </div>
+        
+        <!-- Topright div to hold pages and slogan in two column divs -->
+        <div class="topright">
+          <div class="pages">
+            <h2><a href="./index.html"><span id="selected">PRODUCTS</span></a></h2>
+            <h3><a href="./cart.html"><span>CART</span></a></h3>
+          </div>
+          <div>
+            <h4> <span class="currentroll"></h4>
+          </div>
+        </div>
+      </div>
+
+    <!-- row div to hold pic, and info -->
+    <div class="flex-container">
+        <img class="bunpic" width="450px">
+        <div class="right">
+            <h5 id="description">Customize our delicious hand-made cinnamon roll to your liking!</h5>
+
+            <!-- dropdown -->
+            <div>
+                <label><h5>Glazing:</h5></label> 
+                <!-- select dropdown with glazingChange -->
+                <select id="glazing" onChange="glazingChange(this)"></select>
+            </div>
+            <br>
+            <div>
+                <label><h5>Pack size:</h5></label>
+                <!-- packing dropdown with packingchange -->
+                <select id="packing" onChange="packingChange(this)"></select>
+            </div>
+            <br>
+            <br>
+            <div class="finalcheckout">
+                <div class="priceList">
+                    <h6 id="price">$2.49</h6>
+                </div>
+                <div> <button id="checkout">
+                    <h3>Add to Cart</button></h3>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+  </body>
+</html>
