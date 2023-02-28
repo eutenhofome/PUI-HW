@@ -1,5 +1,3 @@
-<script type="module" src="./rollsData.js" defer></script>
-
 // import rolls and make constructor class
 import {rolls} from "./rollsData.js"
 import {glazeOptions} from "./rollsData.js"
@@ -16,25 +14,66 @@ class Roll {
     }
 }
 
-
-
 const cart = new Set()
 
-// +source price and image
-const queryString = window.location.search;
-const params = new URLSearchParams(queryString);
-const rollType = params.get('roll');
-const rollPrice = rolls[rollType].basePrice
-const rollImage = rolls[rollType]['imageFile']
-
-// Initialize roll with whats already in cart
-
-// make template show all the rolls
-function expandTemplate() {
-
+// add a roll into the stored template
+function addToTemplate(rollType, rollGlazing, packSize, basePrice) {
+    const addRoll = new Roll(rollType, rollGlazing, packSize, basePrice);
+    cart.add(addRoll);
+    return addRoll;
 }
 
-// remove a Roll with remove button
-function removeRoll() {
+// make template show all the accurate rolls
+function alterTemplate(roll) {
+    const template = document.querySelector("#cartTemplate");
+    const clone = template.content.cloneNode(true);
+    //makes roll element the whole cart div to add to
+    roll.element =clone.querySelector(".bunUnit")
+
+    // if remove button click -> call removeRoll with clicked Roll
+    const removeButton = roll.element.querySelector("#remove");
+    if (removeButton) {
+        removeButton.addEventListener('click',removeRoll(roll));
+    }
+    // prepend to the wholeCart, to visually add
+    const wholeCart = document.querySelector(".wholeCart");
+    wholeCart.prepend(roll.element);
+    updateVisuals(roll);
+}
+
+// action for remove button
+function removeRoll(roll) {
+    // remove roll from whole cart DOM & cart set
+    roll.element.remove();
+    cart.set.delete(roll);
+}
+
+//update visuals after each roll is added, so proper info is shown
+function updateVisuals(roll) {
     
+    const bunPic = roll.element.querySelector(".bunpic");
+    bunPic.src = "./products/" + rolls[roll.type].imageFile;
+
+    const bunName = roll.element.querySelector(".itemName");
+    bunName.innerHTML = roll.type;
+
+    const bunDiff = roll.element.querySelector(".itemDiff");
+    bunDiff.innerHTML = "Glazing: " + roll.glazing;
+
+    const bunSize = roll.element.querySelector(".itemSize");
+    bunSize.innerHTML = "Pack Size: " + roll.size; 
+
+    const bunPrice = roll.element.querySelector(".price");
+    bunPrice.innerHTML = roll.finalPrice;
+}
+
+// add the rolls provided on canvas
+addToTemplate("Original", "Sugar Milk", "1", 2.49);
+addToTemplate("Walnut", "Vanilla Milk", "12", 3.49);
+addToTemplate("Raisin", "Sugar Milk", "3", 2.99);
+addToTemplate("Apple", "Original", "3", 3.49);
+
+// alter template to reflect the canvas rolls
+for (const bun of cart) {
+    alterTemplate(bun);
 }

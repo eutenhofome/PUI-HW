@@ -67,18 +67,23 @@ for (let i=0; i<4; i++) {
 
 // changes the glaze price by init the added value, then limiting to 2 decimals
 function glazingChange(element) {
+    let currPack = choosePack.selectedIndex;
     const glazeChange = Number(element.value);
     addedPrice = Number(2.49 + glazeChange).toFixed(2);
-    finalPrice = "$" + (addedPrice);
+    addedPack = Number(addedPrice * packOptions[currPack]["packDiff"]).toFixed(2)
+    finalPrice = "$" + (addedPack);
     updatePrice(finalPrice);
 }
 
+
 // multiplies the added price by the pack size value w/ 2 decimals
 function packingChange(element) {
-   const packChange = Number(element.value);
-   multPrice = Number(addedPrice * packChange).toFixed(2);
-   finalPrice = "$" + (multPrice);
-   updatePrice(finalPrice);
+    let currGlaze = chooseGlaze.selectedIndex;
+    const packChange = Number(element.value);
+    addedPrice = Number(2.49 + glazeOptions[currGlaze]["glazePrice"]).toFixed(2);
+    multPrice = Number(addedPrice * packChange).toFixed(2);
+    finalPrice = "$" + (multPrice);
+    updatePrice(finalPrice);
 }
 
 // stores new price in final price value w/ the "price" id

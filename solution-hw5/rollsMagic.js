@@ -8,6 +8,7 @@ class Roll {
         this.glazing =  rollGlazing;
         this.size = packSize;
         this.basePrice = basePrice;
+        this.finalPrice = ((basePrice + glazeOptions[rollGlazing].glazePrice) * (packOptions[packSize].packDiff)).toFixed(2);
     }
 }
 
