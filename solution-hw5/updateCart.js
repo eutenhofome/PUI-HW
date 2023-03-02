@@ -72,7 +72,7 @@ function updateVisuals(roll) {
     bunPic.src = "./products/" + rolls[roll.type].imageFile;
 
     const bunName = roll.element.querySelector(".itemName");
-    bunName.innerHTML = roll.type;
+    bunName.innerHTML = roll.type + " Cinnamon Roll";
 
     const bunDiff = roll.element.querySelector(".itemDiff");
     bunDiff.innerHTML = "Glazing: " + roll.glazing;
