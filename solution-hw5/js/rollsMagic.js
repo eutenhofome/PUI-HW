@@ -8,7 +8,6 @@ class Roll {
         this.glazing =  rollGlazing;
         this.size = packSize;
         this.basePrice = basePrice;
-        this.finalPrice = ((basePrice + glazeOptions[rollGlazing].glazePrice) * (packOptions[packSize].packDiff)).toFixed(2);
     }
 }
 
@@ -43,6 +42,21 @@ function updateCart() {
     let chosenRoll = new Roll(rollType, glazeChoice.glaze, packChoice.pack, rollPrice);
     cart.push(chosenRoll);
 
+    let cartArrayString = JSON.stringify(cart);
+    localStorage.setItem("storedBuns", cartArrayString);
+    console.log(localStorage.getItem("storedBuns"));
+
+}
+
+if (localStorage.getItem("storedBuns") != null) {
+    let parsedBuns = JSON.parse(localStorage.getItem("storedBuns"));
+    console.log(parsedBuns)
+
+    var bun;
+    for (bun in parsedBuns) {
+        const currBun = parsedBuns[bun];
+        cart.push(currBun);
+    }
 }
 
 
