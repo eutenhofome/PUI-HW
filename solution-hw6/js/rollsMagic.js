@@ -42,22 +42,26 @@ function updateCart() {
     let chosenRoll = new Roll(rollType, glazeChoice.glaze, packChoice.pack, rollPrice);
     cart.push(chosenRoll);
 
+    // string cart, locally store string cart
     let cartArrayString = JSON.stringify(cart);
     localStorage.setItem("storedBuns", cartArrayString);
-    console.log(localStorage.getItem("storedBuns"));
 
 }
 
+// if there are buns in cart already
 if (localStorage.getItem("storedBuns") != null) {
     let parsedBuns = JSON.parse(localStorage.getItem("storedBuns"));
-    console.log(parsedBuns)
+    // save buns in cart as parsedBuns
 
-    var bun;
+    var bun; 
     for (bun in parsedBuns) {
+        // push all buns
         const currBun = parsedBuns[bun];
         cart.push(currBun);
     }
 }
+
+console.log(localStorage.getItem("storedBuns"));
 
 
 

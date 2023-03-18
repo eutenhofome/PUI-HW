@@ -10,7 +10,6 @@ class Roll {
         this.glazing = rollGlazing;
         this.size = packSize;
         this.basePrice = basePrice;
-        console.log(packOptions)
         this.finalPrice = ((basePrice + glazeOptions[rollGlazing]) * (packOptions[packSize])).toFixed(2);
     }
 }
@@ -21,6 +20,7 @@ const cart = new Set()
 function addToTemplate(rollType, rollGlazing, packSize, basePrice) {
     const roll = new Roll(rollType, rollGlazing, packSize, basePrice);
     cart.add(roll);
+    return roll;
 }
 
 // make template show all the accurate rolls
@@ -90,28 +90,19 @@ function updateVisuals(roll) {
     updatePrice();
 }
 
-// add the buns provided on canvas
-addToTemplate("Original", "Sugar Milk", "1", 2.49);
-addToTemplate("Walnut", "Vanilla Milk", "12", 3.49);
-addToTemplate("Raisin", "Sugar Milk", "3", 2.99);
-addToTemplate("Apple", "Original", "3", 3.49);
-
-// alter template to reflect the buns provided on canvas
-for (const bun of cart) {
-    alterTemplate(bun);
-}
-
+// retrieve buns, adds to template
 function retrieveLocalStorage() {
     const parsedBuns = JSON.parse(localStorage.getItem("storedBuns"));
     for (const bun of parsedBuns) {
-        const addBun = addToTemplate(bun.type, bun.glazing, bun.packing, bun.basePrice);
+        const addBun = addToTemplate(bun.type, bun.glazing, bun.size, bun.basePrice);
         alterTemplate(addBun);
     }
 }
 
+// calls to retrieve local storage if there are buns in the cart
 if (localStorage.getItem("storedBuns") != null) {
     retrieveLocalStorage();
 }
-console.log("cart", cart)
+
 console.log(localStorage.getItem("storedBuns"));
 
