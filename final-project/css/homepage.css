@@ -1,0 +1,51 @@
+.topbar {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding-left: 25px;
+    /* background-color:rgb(157, 226, 249); */
+    background-color:rgb(2, 46, 123);
+    border-bottom: solid rgb(159, 189, 240) 3px;
+    align-items: center;
+}
+
+.unitbar {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding-left: 25px;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.topname {
+    padding-bottom: 0px;
+}
+
+.intro {
+    padding-top: 100px;
+    text-align: center;
+}
+
+h1 {
+    font-family: lato, sans-serif;
+    font-size:xxx-large;
+    font-weight: 300;
+    color:rgb(255, 255, 255);
+    /* -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black; */
+}
+
+h2 {
+    font-family: lato, sans-serif;
+    font-size:xx-large;
+    font-weight: 200 px;
+    color: rgb(2, 46, 123);
+}
+
+h3 {
+    font-family: lato, sans-serif;
+    font-weight: lighter;
+    font-size: xx-large; 
+    color:black
+}
