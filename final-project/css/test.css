@@ -93,7 +93,7 @@ h5 {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    gap: 30px;
+    gap: 40px;
     margin-left: 12vw;
     margin-right: 12vw;
     align-items: center;
@@ -101,7 +101,7 @@ h5 {
     margin-top: 3%;
 }
 
-.box {
+label {
     display: flex;
     flex-direction: column;
     width: 170px;
@@ -119,13 +119,12 @@ h5 {
     font-weight: 300px;
     font-size: x-large; 
     color:rgb(2, 46, 123);
-    background:rgb(227, 243, 255);
+    background:rgb(233, 246, 255);
     cursor: pointer;
 }
 
-.box:hover{
-    transform: scale(1.1);
-    box-shadow: 0 0 7px rgb(36, 100, 174);
+label:hover{
+    transform: scale(1.05);
     
 }
 
@@ -144,8 +143,8 @@ input {
     display:none;
 }
 
-:checked {
+input:checked + label{
     scale: 1.1;
-    box-shadow: 0 0 7px rgb(36, 100, 174);
-
+    box-shadow: 0 0 15px rgb(140, 0, 255);
+    color:rgb(1, 31, 83);
 }

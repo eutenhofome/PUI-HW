@@ -94,16 +94,23 @@ function fillTiles() {
         $(`.boxinput${index}`).val(tile.key);
         console.log(tile.key)
         if (tile.language == "sp") {
-            $('input[name=box'+ index + ']').attr("id", tile.key);
+            $('input[name=box'+ index + ']').attr("id", "sp-" + tile.key);
             $('input[name=box'+ index + ']').attr("name","sp");
+            $(`#label${index}`).attr("for", "sp-" + tile.key);
         } 
-        if (tile.language == "eng") {
-            $('input[name=box'+ index + ']').attr("id", tile.key);
+        else {
+            $('input[name=box'+ index + ']').attr("id", "eng-" + tile.key);
             $('input[name=box'+ index + ']').attr("name","eng");
+            $(`#label${index}`).attr("for", "eng-" + tile.key);
+
         }
 
     }
 }
+
+let tries = 0;
+let wrong = 0;
+let hidden = 0;
 
 $(`.boxes`).on("click", "input[name=sp]", function() {
     if ($('input[name=eng]:checked').attr("id") == null) {
@@ -113,7 +120,7 @@ $(`.boxes`).on("click", "input[name=sp]", function() {
 });
 
 $(`.boxes`).on("click", "input[name=eng]", function() {
-    if ($('input[name=eng]:checked').attr("id") == null) {
+    if ($('input[name=sp]:checked').attr("id") == null) {
         return
     }
     checkTiles();
@@ -121,10 +128,28 @@ $(`.boxes`).on("click", "input[name=eng]", function() {
 
 function checkTiles() {
     let sp = $(`input[name=sp]:checked`);
-    let eng = $(`input[name=eng]#checked`);
-    let spKey = $(`input[name=sp]:checked`).attr("id");
-    let engKey = $(`input[name=eng]:checked`).attr("id");
-    console.log("HERE", spKey, engKey)
+    let eng = $(`input[name=eng]:checked`);
+    let spKey = $(`input[name=sp]:checked`).attr("id")[3];
+    let engKey = $(`input[name=eng]:checked`).attr("id")[4];
+    let engBox = eng.next();
+    let spBox = sp.next();
+
+    if (spKey != engKey) {
+        wrong +=1;
+        tries +=1;
+        // setTimeout(function() {spBox.css('box-shadow', '0 0 15px rgb(34, 255, 0)');}, 2000);
+    // }
+
+    } else {
+        engBox.css('box-shadow', '0 0 15px rgb(34, 255, 0)');
+        spBox.css('box-shadow', '0 0 15px rgb(34, 255, 0)');
+        engBox.fadeOut("slow");
+        spBox.fadeOut("slow");
+        hidden += 1;
+        tries += 1;
+    }
+
+    $(`input[type=radio]`).removeAttr('checked');
 
 }
 
