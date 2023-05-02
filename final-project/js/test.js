@@ -1,12 +1,4 @@
-// timer
 let test = true;
-let time = 00;
-if (`test`) {
-    var x = setInterval(() => {
-        time += 1;
-        $("#timer").text(time);
-    }, 1000);
-}
 
 // establish tile class
 class Tile {
@@ -155,13 +147,20 @@ function checkTiles() {
     }
     console.log("hid", hidden, "wrong", wrong, "tries", tries)
     $(`input[type=radio]`).removeAttr('checked');
-
+    
+    if (hidden == 16) {
+        let test = false;
+        console.log("DONE")
+    }
 }
 
-
-if (hidden == 16) {
-    test = false;
-    console.log("DONE")
+// timer
+let time = 00;
+if (test == true) {
+    var x = setInterval(() => {
+        time += 1;
+        $("#timer").text(time);
+    }, 1000);
 }
 
 const audio = new Audio("audio/buenosdias.mp3");
