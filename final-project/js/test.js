@@ -10,9 +10,11 @@ if (test) {
 
 // establish tile class
 class Tile {
-    constructor(phrase, audio) {
+    constructor(phrase, audio, translation, language) {
         this.phrase = phrase;
         this.audio = audio;
+        this.translation = translation;
+        this.language = language;
     }
 }
 
@@ -24,7 +26,7 @@ let tileValues = [
     ["Que te llamas", "What is your name", "audio/quetellamas.mp3", "audio/whatisyourname.mp3"],
     ["Buenos días", "Good morning", "audio/buenosdias.mp3", "audio/goodmorning.mp3"],
     ["Buenas tardes", "Good afternoon", "audio/buenastardes.mp3", "audio/goodafternoon.mp3"],
-    ["Buenas Noches", "Goodnight", "audio/buenasnoches.mp3", "audio/goodnight.mp3"],
+    ["Buenas noches", "Goodnight", "audio/buenasnoches.mp3", "audio/goodnight.mp3"],
     ["Adiós", "Goodbye", "audio/adios.mp3", "audio/goodbye.mp3"],
     ["Bienvenido", "Welcome", "audio/bienvenido.mp3", "audio/welcome.mp3"],
     ["Cómo estás", "How are you", "audio/comoestas.mp3", "audio/howareyou.mp3"],
@@ -59,8 +61,9 @@ function createTiles() {
 
     for (let i = 0; i < 8; i++) {
         let inputsIndex = inputsIndexes[i];
-        tileInputs.push(new Tile(values[inputsIndex][0],values[inputsIndex][2]));
-        tileInputs.push(new Tile(values[inputsIndex][1],values[inputsIndex][3]))
+        tileInputs.push(new Tile(values[inputsIndex][0],values[inputsIndex][2],values[inputsIndex][1], "sp"));
+        tileInputs.push(new Tile(values[inputsIndex][1],values[inputsIndex][3],values[inputsIndex][0], "eng"))
+
     }
 
 }
@@ -88,6 +91,12 @@ function fillTiles() {
         index = tileIndexes[i];
         let tile = inputs[i];
         $(`#phrase${index}`).text(tile.phrase);
+        if (tile.language = "sp") {
+            $(`#box${index}`).attr("id", "sp");
+        } else {
+            $(`#box${index}`).attr("id", "eng");
+        }
+
     }
 }
 
