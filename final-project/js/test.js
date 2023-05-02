@@ -162,9 +162,6 @@ function checkTiles() {
 if (hidden == 16) {
     test = false;
     console.log("DONE")
-    setTimeout(() => {
-        console.log("2")
-      }, 1000)
 }
 
 const audio = new Audio("audio/buenosdias.mp3");
