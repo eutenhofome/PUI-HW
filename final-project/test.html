@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel = "stylesheet" href = "css/test.css">
+  <meta charset="UTF-8">
+
+  <head>
+    <title>Speak Space</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+</head>
+
+  <body onload = "fillTiles()">
+    <div class = "topBar"> 
+        <img src = "images/logo.png" width = 60px height = 60px alt="Speak Space Logo, two S characters next to each other.">
+        <div class = "topName">
+            <h1>Speak Space</h1>
+        </div>
+    </div>
+
+    <div class= "unitBar">
+        <a href="unit.html"> <img id="homeButton" src="./images/backarrow.png" width = 60px height = 60px alt="Home Button"></a>
+        <h2>Unit 1 Test:</h2><h5 id = "desc"><i>Match each pair correctly.</i></h5>
+        <div class = "timer">
+            <h2>Time: </h2><div class = "seconds"><span id="timer">0</span>s</div>
+        </div>
+    </div> 
+
+    <div class = "testModule">
+
+        <div class = "boxes">
+            <div class = "box" id="0">
+                <span id="phrase0"></span>
+            </div>
+
+            <div class = "box" id="1">
+                <span id="phrase1">Bienvenido</span>
+                <!-- <button id="audio">Listen</button> -->
+            </div>
+            <div class = "box" id="2">
+                <span id="phrase2">Mi nombre es</span>
+            </div>
+            <div class = "box" id="3">
+                <span id="phrase3">Buenos días</span>
+            </div>
+            <div class = "box" id="4">
+                <span id="phrase4">Cuidate</span>
+            </div>
+            <div class = "box" id="5">
+                <span id="phrase5">Cómo estás</span>
+            </div>
+
+            <div class = "box" id="6">
+                <span id="phrase6">Hasta luego!</span>
+            </div>
+            <div class = "box" id="7">
+                <span id="phrase7">Adiós</span>
+            </div>
+            <div class = "box" id="8">
+                <span id="phrase8">Buenas tardes</span>
+            </div>
+            <div class = "box" id="9">
+                <span id="phrase9">Que te llamas</span>
+            </div>
+            <div class = "box" id="10">
+                <span id="phrase10">Buenas noches</span>
+            </div>
+
+            <div class = "box" id="11">
+                <span id="phrase11"></span>
+            </div>
+            <div class = "box" id= "12">
+                <span id="phrase12"></span>
+            </div>
+            <div class = "box" id="13">
+                <span id="phrase13"></span>
+            </div>
+            <div class = "box" id="14">
+                <span id="phrase14"></span>
+            </div>
+            <div class = "box" id="15">
+                <span id="phrase15"></span>
+            </div>
+
+            <!-- <div class = "box" id="16">
+                <span id="phrase16"></span>
+            </div>
+            <div class = "box" id="17">
+                <span id="phrase17"></span>
+            </div>
+            <div class = "box" id="18">
+                <span id="phrase18"></span>
+            </div>
+            <div class = "box" id="19">
+                <span id="phrase19"></span>
+            </div> -->
+    
+        </div>
+
+    </div>
+   
+    
+  </body>
+  <script src="js/test.js"></script>
+</html>

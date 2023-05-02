@@ -1,0 +1,141 @@
+.topBar {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding-left: 25px;
+    /* background-color:rgb(157, 226, 249); */
+    background-color:rgb(2, 46, 123);
+    border-bottom: solid rgb(159, 189, 240) 3px;
+    align-items: center;
+}
+
+.unitBar {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding-left: 25px;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.topName {
+    padding-bottom: 0px;
+}
+
+.intro {
+    padding-top: 100px;
+    text-align: center;
+}
+
+h1 {
+    font-family: lato, sans-serif;
+    font-size:xxx-large;
+    font-weight: 300;
+    color:rgb(255, 255, 255);
+}
+
+h2 {
+    font-family: lato, sans-serif;
+    font-size:xx-large;
+    font-weight: 200 px;
+    color: rgb(2, 46, 123);
+}
+
+h3 {
+    font-family: lato, sans-serif;
+    font-weight:bold;
+    font-size: xx-large; 
+    color:white;
+}
+
+h4 {
+    font-family: lato, sans-serif;
+    font-weight:lighter;
+    font-size: xx-large; 
+    color:black;
+}
+
+h5 {
+    font-family: lato, sans-serif;
+    font-weight:lighter;
+    font-size: x-large;
+    color:black;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+#homeButton:hover{
+    transform: scale(1.1);
+}
+
+#desc {
+    margin-top: 3px;
+}
+
+.timer {
+    margin-right: 15px;
+    margin-left: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.seconds {
+    font-family: lato, sans-serif;
+    font-size:xx-large;
+    font-weight: 200 px;
+    color: rgb(2, 46, 123);
+    margin-top: 25px;
+}
+
+
+.boxes {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+    margin-left: 12vw;
+    margin-right: 12vw;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 3%;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    width: 170px;
+    height: 50px;
+    border: 5px solid rgb(55, 55, 55);
+    border-radius: 25px;
+    padding:15px;
+    justify-content: center;
+    align-items: center;
+    
+    
+    gap: 5px;
+
+    font-family: lato, sans-serif;
+    font-weight: 300px;
+    font-size: x-large; 
+    color:rgb(2, 46, 123);
+    background:rgb(227, 243, 255);
+}
+
+.box:hover{
+    transform: scale(1.1);
+    box-shadow: 0 0 7px rgb(36, 100, 174);
+    
+}
+
+#audio {
+    cursor: pointer;
+}
+
+button {
+    width: 60px;
+    height: 25px;
+    border: 3px solid rgb(36, 100, 174);
+    border-radius: 25px;
+}
+
