@@ -54,7 +54,7 @@ function randomArray(max) {
     }
 }
 
-let tileInputs = []
+let tileInputs = new Array()
 function createTiles() {
     let values = tileValues;
     randomArray(8);
@@ -90,31 +90,31 @@ function fillTiles() {
         index = tileIndexes[i];
         let tile = inputs[i];
         $(`#phrase${index}`).text(tile.phrase);
-
+        console.log("language:", tile.language)
         if (tile.language == "sp") {
             $(`#box${index}`).attr("id", "sp");
             $('input[name=box'+ index + ']').attr("name","sp");
-            // $('input[name=eng]').val() = "t";
-            // $('input[name=box'+ index + ']').attr("id","sp");
-        } else {
+        } 
+        if (tile.language == "eng") {
             $(`#box${index}`).attr("id", "eng");
             $('input[name=box'+ index + ']').attr("name","eng");
-            // $('input[name=box'+ index + ']').attr("id","eng");
+            console.log("changed name")
         }
 
     }
 }
 
-$(`.box`).on("click", "input[name=sp]", function() {
+$(`.boxes`).on("click", "input[name=sp]", function() {
     console.log("k")
-    console.log($('input[name=eng]').val)
+    // console.log($('input[name=eng]').val)
     if ($('input[name=eng]:checked').val() == null) {
         return
     }
     console.log("other one is clicked")
 });
 
-$(`.box`).on("click", "input[name=eng]", function() {
+$(`.boxes`).on("click", "input[name=eng]", function() {
+    console.log("eng")
     if ($('input[name=eng]:checked').val() == null) {
         return
     }
