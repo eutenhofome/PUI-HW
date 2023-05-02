@@ -1,7 +1,7 @@
 // timer
 let test = true;
 let time = 00;
-if (test) {
+if (`test`) {
     var x = setInterval(() => {
         time += 1;
         $("#timer").text(time);
@@ -137,20 +137,34 @@ function checkTiles() {
     if (spKey != engKey) {
         wrong +=1;
         tries +=1;
-        // setTimeout(function() {spBox.css('box-shadow', '0 0 15px rgb(34, 255, 0)');}, 2000);
-    // }
+        engBox.css('box-shadow', '0 0 15px rgb(255, 0, 0)');
+        spBox.css('box-shadow', '0 0 15px rgb(255, 0, 0)');
+        setTimeout(function() {
+            engBox.css('box-shadow', 'none');
+            spBox.css('box-shadow', 'none');
+        }, 700);
 
     } else {
+        console.log("correct")
         engBox.css('box-shadow', '0 0 15px rgb(34, 255, 0)');
         spBox.css('box-shadow', '0 0 15px rgb(34, 255, 0)');
         engBox.fadeOut("slow");
         spBox.fadeOut("slow");
-        hidden += 1;
+        hidden += 2;
         tries += 1;
     }
-
+    console.log("hid", hidden, "wrong", wrong, "tries", tries)
     $(`input[type=radio]`).removeAttr('checked');
 
+}
+
+
+if (hidden == 16) {
+    test = false;
+    console.log("DONE")
+    setTimeout(() => {
+        console.log("2")
+      }, 1000)
 }
 
 const audio = new Audio("audio/buenosdias.mp3");
