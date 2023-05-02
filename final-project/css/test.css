@@ -143,3 +143,9 @@ button {
 input {
     display:none;
 }
+
+:checked {
+    scale: 1.1;
+    box-shadow: 0 0 7px rgb(36, 100, 174);
+
+}

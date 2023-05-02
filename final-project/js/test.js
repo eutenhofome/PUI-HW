@@ -62,9 +62,9 @@ function createTiles() {
 
     for (let i = 0; i < 8; i++) {
         let inputsIndex = inputsIndexes[i];
-        tileInputs.push(new Tile(values[inputsIndex][0],values[inputsIndex][2],values[inputsIndex][1], "sp"));
-        tileInputs.push(new Tile(values[inputsIndex][1],values[inputsIndex][3],values[inputsIndex][0], "eng"))
-        console.log(tileInputs)
+        // let key = values[inputsIndex][3]
+        tileInputs.push(new Tile(values[inputsIndex][0],values[inputsIndex][2],values[inputsIndex][1], "sp", values[inputsIndex][4]));
+        tileInputs.push(new Tile(values[inputsIndex][1],values[inputsIndex][3],values[inputsIndex][0], "eng", values[inputsIndex][4]))
     }
 
 }
@@ -86,20 +86,19 @@ function shuffledArray(max) {
 // fill the tiles onto board
 function fillTiles() {
     let inputs = tileInputs;
-    console.log(inputs)
     shuffledArray(16);
     for (let i = 0; i < 16; i++) {
         index = tileIndexes[i];
         let tile = inputs[i];
         $(`#phrase${index}`).text(tile.phrase);
-        console.log("KEY", tile.key)
         $(`.boxinput${index}`).val(tile.key);
+        console.log(tile.key)
         if (tile.language == "sp") {
-            $(`#box${index}`).attr("id", "sp");
+            $('input[name=box'+ index + ']').attr("id", tile.key);
             $('input[name=box'+ index + ']').attr("name","sp");
         } 
         if (tile.language == "eng") {
-            $(`#box${index}`).attr("id", "eng");
+            $('input[name=box'+ index + ']').attr("id", tile.key);
             $('input[name=box'+ index + ']').attr("name","eng");
         }
 
@@ -107,14 +106,14 @@ function fillTiles() {
 }
 
 $(`.boxes`).on("click", "input[name=sp]", function() {
-    if ($('input[name=eng]:checked').val() == null) {
+    if ($('input[name=eng]:checked').attr("id") == null) {
         return
     }
     checkTiles();
 });
 
 $(`.boxes`).on("click", "input[name=eng]", function() {
-    if ($('input[name=eng]:checked').val() == null) {
+    if ($('input[name=eng]:checked').attr("id") == null) {
         return
     }
     checkTiles();
@@ -122,10 +121,11 @@ $(`.boxes`).on("click", "input[name=eng]", function() {
 
 function checkTiles() {
     let sp = $(`input[name=sp]:checked`);
-    let eng = $(`input[name=eng]#checked`);;
-    console.log($(`input[name=sp]:checked`))
-    console.log(sp.val);
-    console.log(eng.val)
+    let eng = $(`input[name=eng]#checked`);
+    let spKey = $(`input[name=sp]:checked`).attr("id");
+    let engKey = $(`input[name=eng]:checked`).attr("id");
+    console.log("HERE", spKey, engKey)
+
 }
 
 const audio = new Audio("audio/buenosdias.mp3");
