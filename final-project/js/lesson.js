@@ -1,8 +1,26 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-lazyLoad: true
-$('.lessonModule').owlCarousel({
-    items:4,
-    lazyLoad:true,
-    loop:true,
-    margin:10
+$(document).ready(function () {
+    $('.owl-carousel').owlCarousel({
+        loop:false,
+        margin: 80,
+        center: true,
+        merge: false,
+        responsiveClass:true,
+        autoWidth: true,
+        responsive:{
+            0:{
+                items:1,
+                nav:true
+            },
+            600:{
+                items:1,
+                nav:true
+            },
+            1000:{
+                items:1,
+                nav:true
+            }
+        }
+    });
 });
+
+

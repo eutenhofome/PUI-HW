@@ -81,10 +81,10 @@ a {
     margin-right: auto;
     border: 5px solid rgb(2, 46, 123);
     border-radius: 25px;
-    background-color: rgb(65, 173, 255);
+    background-color: rgb(238, 248, 255);
     font-size: xx-large;
     font-weight: 900px;
-    color: white;
+    color: rgb(26, 26, 26);
 }
 
 .go:hover{
@@ -162,7 +162,7 @@ h5 {
 }
 
 #phonetics {
-    color:rgb(50, 180, 255); 
+    color:rgb(0, 47, 200); 
 }
 
 .lessonTopBar {
@@ -181,7 +181,7 @@ h5 {
     cursor: pointer;
 }
 
-.lessonModule {
+.owlCarousel {
     position: relative;
 }
 
@@ -207,12 +207,12 @@ h5 {
 
 
 .lesson {
-    height: 500px;
-    width: 800px;
+    height: 480px;
+    width: 720px;
     background: white;
-    margin-bottom: 20px;
-    margin-top: 15px;
-    padding-bottom: 10px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    padding-bottom: 0px;
     position: relative;
     margin-left: auto;
     margin-right: auto;
@@ -224,7 +224,13 @@ h5 {
     margin-left: 80px;
     margin-right: 80px;
     margin-top: 15px;
+    gap: 100px;
     height: 470;
     width: 770;
     position: relative;
 }
+
+.owl-carousel {
+    gap: 20%;
+}
+

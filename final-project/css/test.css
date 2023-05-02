@@ -88,7 +88,6 @@ h5 {
     margin-top: 25px;
 }
 
-
 .boxes {
     display: flex;
     flex-direction: row;
@@ -142,7 +141,9 @@ button {
 input {
     display:none;
 }
-
+.box {
+    color:rgb(18, 0, 69);
+}
 input:checked + label{
     scale: 1.1;
     box-shadow: 0 0 15px rgb(140, 0, 255);
