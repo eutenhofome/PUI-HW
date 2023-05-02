@@ -6,7 +6,7 @@
     <title>Speak Space</title>
     
 </head>
-
+  <!-- Fill Tiles with randomized values at the start -->
   <body onload = "fillTiles()">
     <div class = "topBar"> 
         <img src = "images/logo.png" width = 60px height = 60px alt="Speak Space Logo, two S characters next to each other.">
@@ -15,6 +15,7 @@
         </div>
     </div>
 
+    <!-- Back Arrow + Game Instructions -->
     <div class= "unitBar">
         <a href="unit.html"> <img id="homeButton" src="./images/backarrow.png" width = 60px height = 60px alt="Home Button"></a>
         <h2>Unit 1 Test:</h2><h5 id = "desc"><i>Match each pair correctly.</i></h5>
@@ -22,9 +23,11 @@
             <h2>Time: </h2><div class = "seconds"><span id="timer">0</span>s</div>
         </div>
     </div> 
-
+    <!-- Test Module Div making up the whole exam space -->
     <div class = "testModule">
+        <!-- Boxes div holding every tile/box -->
         <div class = "boxes">
+            <!-- Radio Input type to only select one box per language -->
             <input type="radio" name="box0" class="boxinput0" id="0">
             <label id="label0">
                 <div class = "box" id="box0" >
@@ -126,6 +129,7 @@
 
     </div>
 
+    <!-- Winning PopUp Div, initialized with no visibility, will be toggled upon completion of the exam -->
     <div id="popup" class="popup">
         <div class="innerPopUp">
             <div class = upperPopUp>

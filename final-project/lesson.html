@@ -11,23 +11,26 @@
    </head>
 
   <body>
+    <!-- Repeated TopBar -->
     <div class = "topBar"> 
         <img src = "images/logo.png" width = 60px height = 60px alt="Speak Space Logo, two S characters next to each other.">
         <div class = "topName">
             <h1>Speak Space</h1>
         </div>
     </div>
-
+    <!-- Div to hold return arrow and Unit Name -->
     <div class= "unitBar">
         <a href="unit.html"> <img id="homeButton" src="./images/backarrow.png" width = 60px height = 60px alt="Home Button"></a>
         <h2>Unit 1: Greetings Lesson</h2>
     </div>
 
-    <!-- SLIDER DIV -->
+    <!-- Owl Carousel Div -->
     <div class="owl-carousel owl-theme">
         
-        <!-- Introduce Yourself -->
+        <!-- Container Div -->
         <div>
+            <!-- 3 Lesson Divs with content, owl carousel will use these items to form a carousel -->
+            <!-- Lesson: Introduce Yourself -->
             <div class ="lesson">
                 <div class = "lessonContent">
                     <div class = "lessonTopBar">
@@ -73,7 +76,7 @@
             </div>
         </div>
 
-        <!-- Greetings Part 1 -->
+        <!-- Lesson: Greetings Part 1 -->
         <div>
             <div class ="lesson">
                 <div class = "lessonContent">
@@ -122,7 +125,7 @@
             </div>
         </div>
 
-        <!-- Greetings Part 2 -->
+        <!-- Lesson: Greetings Part 2 -->
         <div>
             <div class ="lesson">
                 <div class = "lessonContent">
@@ -179,6 +182,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="js/lesson.js"></script>
 
+    <!-- Calling Owl Carousel to generate the carousel -->
     <script>
         $(document).ready(function(){
             $(".owl-carousel").owlCarousel();

@@ -9,12 +9,12 @@ class Tile {
     }
 }
 
-// Array of All pairs with audios
+// Array of All pairs, final value is a key that links spanish and english tiles to check for solution
 let tileValues = [
     ["Mi nombre es", "My name is", "audio/minombrees.mp3", "audio/mynameis.mp3", "a"],
     ["Yo soy", "I am", "audio/yosoy.mp3", "audio/iam.mp3", "b"],
     ["Yo me llamo", "I am called", "audio/yomellamo.mp3", "audio/iamcalled.mp3", "c"],
-    ["Que te llamas", "What is your name", "audio/quetellamas.mp3", "audio/whatisyourname.mp3", "d"],
+    ["Que te llamas", "What's your name", "audio/quetellamas.mp3", "audio/whatisyourname.mp3", "d"],
     ["Buenos días", "Good morning", "audio/buenosdias.mp3", "audio/goodmorning.mp3", "e"],
     ["Buenas tardes", "Good afternoon", "audio/buenastardes.mp3", "audio/goodafternoon.mp3", "f"],
     ["Buenas noches", "Goodnight", "audio/buenasnoches.mp3", "audio/goodnight.mp3", "g"],
@@ -25,14 +25,14 @@ let tileValues = [
     ["Cuidate", "Take Care", "audio/cuidate.mp3", "audio/takecare.mp3", "l"]
 ]
 
-// init tile classes into tileinputs
 
-// random index array generator for tile randomization
+// generates random number from a range (max)
 function random(max) {
     let num = Math.floor((Math.random() * max));
     return Number(num);
     }
 
+// creates array of shuffled indexes from range of 0 to max
 let inputsIndexes = []
 function randomArray(max) {
     let numberx = random(max);
@@ -45,6 +45,7 @@ function randomArray(max) {
     }
 }
 
+// Creates array of the organized tiles, with language markers
 let tileInputs = new Array()
 function createTiles() {
     let values = tileValues;
@@ -58,9 +59,10 @@ function createTiles() {
     }
 
 }
+// calls createTiles to initialize the available tileInputs
 createTiles();
 
-// shuffled tile array function
+// shuffled tile array function again
 let tileIndexes = []
 function shuffledArray(max) {
     let numberx = random(max);
@@ -73,7 +75,7 @@ function shuffledArray(max) {
     }
 }
 
-// fill the tiles onto board
+// fill the tiles onto board with shuffled array, use jquery to group and identify the tiles by changing id's (for key), name (for grouping and avoiding picking multiple of same language)
 function fillTiles() {
     let inputs = tileInputs;
     shuffledArray(16);
@@ -81,7 +83,6 @@ function fillTiles() {
         index = tileIndexes[i];
         let tile = inputs[i];
         $(`#phrase${index}`).text(tile.phrase);
-        $(`.boxinput${index}`).val(tile.key);
         if (tile.language == "sp") {
             $('input[name=box'+ index + ']').attr("id", "sp-" + tile.key);
             $('input[name=box'+ index + ']').attr("name","sp");
@@ -97,17 +98,22 @@ function fillTiles() {
     }
 }
 
+// When hidden reaches 16, game is over as all tiles have been matched
+// Tries and Wrong used to calculate accuracy rate
 let tries = 0;
 let wrong = 0;
 let hidden = 0;
 
+// On click of spanish tile, if there is no english tile selected, return
 $(`.boxes`).on("click", "input[name=sp]", function() {
     if ($('input[name=eng]:checked').attr("id") == null) {
         return
     }
+    // otherwise, checkTiles to see if it is a match
     checkTiles();
 });
 
+// vice versa
 $(`.boxes`).on("click", "input[name=eng]", function() {
     if ($('input[name=sp]:checked').attr("id") == null) {
         return
@@ -116,6 +122,7 @@ $(`.boxes`).on("click", "input[name=eng]", function() {
 });
 
 function checkTiles() {
+    // uses previously marked id's to gather key of each title
     let sp = $(`input[name=sp]:checked`);
     let eng = $(`input[name=eng]:checked`);
     let spKey = $(`input[name=sp]:checked`).attr("id")[3];
@@ -123,6 +130,7 @@ function checkTiles() {
     let engBox = eng.next();
     let spBox = sp.next();
 
+    // If keys do not match, brief red shadow on the tiles
     if (spKey != engKey) {
         wrong +=1;
         tries +=1;
@@ -132,7 +140,8 @@ function checkTiles() {
             engBox.css('box-shadow', 'none');
             spBox.css('box-shadow', 'none');
         }, 700);
-
+    
+    // If keys match, tiles slowly fade out and reorganize
     } else {
         engBox.css('box-shadow', '0 0 15px rgb(34, 255, 0)');
         spBox.css('box-shadow', '0 0 15px rgb(34, 255, 0)');
@@ -142,17 +151,17 @@ function checkTiles() {
         tries += 1;
     }
     
+    // Unchecks all of the currently checked tiles for next turn
     $(`input[type=radio]`).prop("checked", false);
     
+    // When 16 tiles are flipped, gameOver is called
     if (hidden == 16) {
-        console.log("DONE")
         gameOver();
     }
 }
 
+// Timer
 let time = 00;
-// timer
-
 var timer = setInterval(() => {
     if (hidden != 16) {
         time += 1;
@@ -160,11 +169,10 @@ var timer = setInterval(() => {
     }
 }, 1000);
 
+// Calculates accuracy, inputs time and accuracy into popup, and displays popup
 function gameOver() {
     let accuracy = Math.floor(((tries - wrong)/(tries))*100);
     var popup = document.getElementById("popup");
     popup.style.display = "block";
-    console.log(accuracy)
     $("#message").text("Congratulations! You completed the exam in " + time + " seconds with " + accuracy  + "% accuracy.");
-    console.log($("#message".text))
 }
