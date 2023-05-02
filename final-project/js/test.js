@@ -86,19 +86,39 @@ function shuffledArray(max) {
 function fillTiles() {
     let inputs = tileInputs;
     shuffledArray(16);
-    console.log(tileIndexes);
     for (let i = 0; i < 16; i++) {
         index = tileIndexes[i];
         let tile = inputs[i];
         $(`#phrase${index}`).text(tile.phrase);
-        if (tile.language = "sp") {
+
+        if (tile.language == "sp") {
             $(`#box${index}`).attr("id", "sp");
+            $('input[name=box'+ index + ']').attr("name","sp");
+            // $('input[name=eng]').val() = "t";
+            // $('input[name=box'+ index + ']').attr("id","sp");
         } else {
             $(`#box${index}`).attr("id", "eng");
+            $('input[name=box'+ index + ']').attr("name","eng");
+            // $('input[name=box'+ index + ']').attr("id","eng");
         }
 
     }
 }
+
+$(`.box`).on("click", "input[name=sp]", function() {
+    console.log("k")
+    console.log($('input[name=eng]').val)
+    if ($('input[name=eng]:checked').val() == null) {
+        return
+    }
+    console.log("other one is clicked")
+});
+
+$(`.box`).on("click", "input[name=eng]", function() {
+    if ($('input[name=eng]:checked').val() == null) {
+        return
+    }
+});
 
 const audio = new Audio("audio/buenosdias.mp3");
 

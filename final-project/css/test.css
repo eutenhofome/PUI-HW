@@ -120,6 +120,7 @@ h5 {
     font-size: x-large; 
     color:rgb(2, 46, 123);
     background:rgb(227, 243, 255);
+    cursor: pointer;
 }
 
 .box:hover{
@@ -139,3 +140,6 @@ button {
     border-radius: 25px;
 }
 
+.boxinput {
+    display:none;
+}
