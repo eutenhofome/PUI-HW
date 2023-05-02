@@ -1,5 +1,3 @@
-let test = true;
-
 // establish tile class
 class Tile {
     constructor(phrase, audio, translation, language, key) {
@@ -84,7 +82,6 @@ function fillTiles() {
         let tile = inputs[i];
         $(`#phrase${index}`).text(tile.phrase);
         $(`.boxinput${index}`).val(tile.key);
-        console.log(tile.key)
         if (tile.language == "sp") {
             $('input[name=box'+ index + ']').attr("id", "sp-" + tile.key);
             $('input[name=box'+ index + ']').attr("name","sp");
@@ -137,7 +134,6 @@ function checkTiles() {
         }, 700);
 
     } else {
-        console.log("correct")
         engBox.css('box-shadow', '0 0 15px rgb(34, 255, 0)');
         spBox.css('box-shadow', '0 0 15px rgb(34, 255, 0)');
         engBox.fadeOut("slow");
@@ -145,24 +141,28 @@ function checkTiles() {
         hidden += 2;
         tries += 1;
     }
-    console.log("hid", hidden, "wrong", wrong, "tries", tries)
+
     $(`input[type=radio]`).removeAttr('checked');
     
     if (hidden == 16) {
-        let test = false;
-        console.log("DONE")
+        test = false
+        gameOver();
     }
 }
 
-// timer
+let test = true
 let time = 00;
+// timer
 if (test == true) {
-    var x = setInterval(() => {
+    var timer = setInterval(() => {
         time += 1;
         $("#timer").text(time);
     }, 1000);
 }
 
+function gameOver() {
+    console.log("WON")
+}
 const audio = new Audio("audio/buenosdias.mp3");
 
 const audiobutton = document.querySelectorAll("#audio");
