@@ -174,37 +174,6 @@ h5 {
     height: 60px;
     padding-bottom: 40px;
 }
-.helpButton{
-    margin-left: auto;
-    margin-right: 0px;
-    margin-top: 25px;
-    cursor: pointer;
-}
-
-.owlCarousel {
-    position: relative;
-}
-
-.lessonSliders {
-    display:flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 30px;
-    width: 100%;
-    padding-bottom: 50px;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-}
-
-.lessonSlider {
-    width: 20px;
-    height: 20px;
-    border-radius: 15px;
-    background: grey;
-    cursor: pointer;
-}
-
 
 .lesson {
     height: 480px;

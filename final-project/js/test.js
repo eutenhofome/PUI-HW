@@ -141,35 +141,30 @@ function checkTiles() {
         hidden += 2;
         tries += 1;
     }
-
-    $(`input[type=radio]`).removeAttr('checked');
+    
+    $(`input[type=radio]`).prop("checked", false);
     
     if (hidden == 16) {
-        test = false
+        console.log("DONE")
         gameOver();
     }
 }
 
-let test = true
 let time = 00;
 // timer
-if (test == true) {
-    var timer = setInterval(() => {
+
+var timer = setInterval(() => {
+    if (hidden != 16) {
         time += 1;
         $("#timer").text(time);
-    }, 1000);
-}
+    }
+}, 1000);
 
 function gameOver() {
-    console.log("WON")
+    let accuracy = Math.floor(((tries - wrong)/(tries))*100);
+    var popup = document.getElementById("popup");
+    popup.style.display = "block";
+    console.log(accuracy)
+    $("#message").text("Congratulations! You completed the exam in " + time + " seconds with " + accuracy  + "% accuracy.");
+    console.log($("#message".text))
 }
-const audio = new Audio("audio/buenosdias.mp3");
-
-const audiobutton = document.querySelectorAll("#audio");
-
-// audiobutton.forEach( => {
-//     audiobutton.addEventListener("click", () => {
-//         audio.play();
-//     });
-// });
-
