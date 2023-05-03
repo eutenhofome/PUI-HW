@@ -130,10 +130,6 @@ h5 {
     margin-bottom: 0px;
 }
 
-#questionButton:hover{
-    transform: scale(1.1);
-}
-
 #homeButton:hover{
     transform: scale(1.1);
 }
